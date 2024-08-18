@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de una Universidad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">Sistema de Gestión de una Universidad</h2>
+    <form action="procesar_formulario.php" method="post">
+        <!-- Campo de texto para el nombre -->
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
+
+        <!-- Campo de texto para el correo -->
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+        <!-- Campo de contraseña -->
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" name="password" placeholder="Escribe una contraseña" minlength="8" required>
+
+        <!-- Campo de radio para el género -->
+        <label>Género:</label>
+        <input type="radio" id="hombre" name="genero" value="hombre" required>
+        <label for="hombre">Hombre</label>
+        <input type="radio" id="mujer" name="genero" value="mujer">
+        <label for="mujer">Mujer</label>
+        <input type="radio" id="otro" name="genero" value="otro">
+        <label for="otro">Otro</label>
+
+        <!-- Menú desplegable para seleccionar país -->
+        <label for="pais">País:</label>
+        <select id="pais" name="pais" required>
+            <option value="">Seleccione su país</option>
+            <option value="republica dominicana">Republica Dominicana</option>
+            <option value="estados unidos">Estados unidos</option>
+            <option value="argentina">Argentina</option>
+            <option value="mexico">México</option>
+            <option value="espana">España</option>
+            <option value="colombia">Colombia</option>
+        </select>
+
+        <!-- Campo de fecha -->
+        <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento" required>
+
+        <!-- Campo de textarea para comentarios -->
+        <label for="comentarios">Comentarios adicionales:</label>
+        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Escribe tus comentarios aquí..."></textarea>
+
+           <hr>
+
+        <!-- Relación de Estudiante, Profesor, Curso y Departamento -->
+        <fieldset>
+            <legend>Asignaciones y Relaciones</legend>
+            <label for="relacion-departamento">Departamento Asignado al Profesor:</label>
+            <select id="relacion-departamento" name="relacion-departamento" required>
+                <option value="">Seleccione el departamento</option>
+                <option value="departamento-informatica">Departamento de Informatica</option>
+                <option value="departamento-ciencias">Departamento de Ciencias</option>
+                <option value="departamento-ciencias juridicas">Departamento de Ciencias Juridicas</option>
+                <option value="departamento-matematicas">Departamento de Matemáticas</option>
+                <option value="departamento-medicina">Departamento de medicina</option>
+                <option value="departamento-humanidades">Departamento de Humanidades</option>
+            </select>
+
+            <label for="relacion-curso">Curso Asignado al Estudiante:</label>
+            <select id="relacion-curso" name="relacion-curso" required>
+                <option value="">Seleccione el curso</option>
+                <option value="curso-matematicas">Matemáticas Avanzadas</option>
+                <option value="curso-programacion">Programación en Java</option>
+                <option value="curso-historia">Historia Contemporánea</option>
+            </select>
+
+            <label for="relacion-profesor">Profesor Asignado al Curso:</label>
+            <select id="relacion-profesor" name="relacion-profesor" required>
+                <option value="">Seleccione el profesor</option>
+                <option value="profesor-soriano">Prof. Soriano</option>
+                <option value="profesor-matos">Prof. Matos</option>
+                <option value="profesor-garcia">Prof. García</option>
+                <option value="profesor-ramirez">Prof. Ramírez</option>
+                <option value="profesor-santos">Prof. Santos</option>
+                <option value="profesor-rodriguez">Prof. Rodriguez</option>
+
+     <!-- Campo de checkbox para aceptar términos -->
+     <input type="checkbox" id="terminos" name="terminos" required>
+     <label for="terminos">Acepto los <a href="#">términos y condiciones</a></label>
+
+            </select>
+        </fieldset>
+
+
+
+
+
+        <!-- Botón de envío -->
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
